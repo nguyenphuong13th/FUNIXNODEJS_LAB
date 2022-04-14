@@ -1,4 +1,5 @@
 const http = require('http');//importing http module
+const fs = require('fs');//importing fs module
 //creating server
 const server = http.createServer((req,res)=>
 {
@@ -8,6 +9,12 @@ const server = http.createServer((req,res)=>
         res.write('<head><title>Enter Message</title></head>');
         res.write('<body><form action="/message" method="POST"><input type="text" name="message"><button type="submit">Send</button></form></body>');
         res.write('</html>');
+        return res.end();
+    }
+    if(url === '/message' && req.method === 'POST'){
+        fs.writeFileSync('message.txt','DUMMY');
+        res.statusCode = 302;//code indicates that the resource requested has been temporarily moved to the URL given by the Location header
+        res.setHeader('Location','/');//redirecting to home page
         return res.end();
     }
     res.setHeader('Content-Type','text/html');
