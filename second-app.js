@@ -12,7 +12,15 @@ const server = http.createServer((req,res)=>
         return res.end();
     }
     if(url === '/message' && req.method === 'POST'){
-        fs.writeFileSync('message.txt','DUMMY');
+        const body = [];//array to store data
+        req.on('data',(chunk)=>{//data event
+            body.push(chunk);//pushing data to body array
+        });
+        req.on('end',()=>{//end event
+            const parsedBody = Buffer.concat(body).toString();//concatinating body array to string
+            const message = parsedBody.split('=')[1];//splitting string to get message
+            fs.writeFileSync('message.txt',message);//writing message to file
+        });
         res.statusCode = 302;//code indicates that the resource requested has been temporarily moved to the URL given by the Location header
         res.setHeader('Location','/');//redirecting to home page
         return res.end();
