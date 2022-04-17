@@ -1,0 +1,24 @@
+{
+  "name": "lab1.2",
+  "version": "1.0.0",
+  "description": "LabFunix",
+  "main": "routes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon second-app.js",
+    "start-server": "node second-app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyenphuong13th/FUNIXNODEJS_LAB.git"
+  },
+  "author": "PhuongNguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nguyenphuong13th/FUNIXNODEJS_LAB/issues"
+  },
+  "homepage": "https://github.com/nguyenphuong13th/FUNIXNODEJS_LAB#readme",
+  "dependencies": {
+    "nodemon": "^1.18.3"
+  }
+}
