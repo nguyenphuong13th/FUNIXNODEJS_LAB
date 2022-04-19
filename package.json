@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/nguyenphuong13th/FUNIXNODEJS_LAB/issues"
   },
-  "homepage": "https://github.com/nguyenphuong13th/FUNIXNODEJS_LAB#readme"
+  "homepage": "https://github.com/nguyenphuong13th/FUNIXNODEJS_LAB#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
