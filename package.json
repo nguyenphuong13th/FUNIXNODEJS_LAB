@@ -17,8 +17,5 @@
   "bugs": {
     "url": "https://github.com/nguyenphuong13th/FUNIXNODEJS_LAB/issues"
   },
-  "homepage": "https://github.com/nguyenphuong13th/FUNIXNODEJS_LAB#readme",
-  "dependencies": {
-    "nodemon": "^1.18.3"
-  }
+  "homepage": "https://github.com/nguyenphuong13th/FUNIXNODEJS_LAB#readme"
 }
