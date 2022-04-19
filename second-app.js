@@ -7,7 +7,8 @@ app.use((req, res, next) => {
 })//1st middleware
 app.use((req, res, next) => {
     console.log('this is the second middleware');
-})//1st middleware
+    res.send('<h1>Hello from Express.js</h1>');//sending a response
+})//2nd middleware
 
 const server = http.createServer(app);//creating a server
 //listening to port
