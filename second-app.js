@@ -9,7 +9,7 @@ app.use('/add-product',(req, res, next) => {
 app.use('/',(req, res, next) => {
     res.send('<h1>Hello from Express.js</h1>');//sending a response
 })//3rd middleware
-app.use('/product',(req, res, next) => {
+app.post('/product',(req, res, next) => { // only for post requests
     console.log(req.body);//logging the request body
     res.redirect('/');//back to the root
 })//4th middleware
