@@ -1,9 +1,9 @@
 const express=require('express');
-
+const path=require('path');
 const router=express.Router();
 //admin/add-product => GET
 router.get('/add-product',(req, res, next) => {
-    res.send('<html><body><form action = "/admin/add-product" method="POST"><input type="text" name="title"><button type="submit">Add Product</button></form></body></html>');//sending a response, action is the url where the form will be submitted, method is the method used to submit the form (POST or GET)
+    res.sendFile(path.join(__dirname,'../','views','add-product.html'));//sending a response, action is the url where the form will be submitted, method is the method used to submit the form (POST or GET)
 })
 //admin/add-product => POST
 router.post('/add-product',(req, res, next) => { // only for post requests url can be the same with get
