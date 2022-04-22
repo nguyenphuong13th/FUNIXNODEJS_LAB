@@ -3,11 +3,12 @@ const app = express();//creating an express application
 const bodyParser = require('body-parser');//importing body-parser module
 const adminRoutes = require('./routes/admin');//importing admin routes
 const shopRoutes = require('./routes/shop');//importing shop routes
+const path = require('path');//importing path module
 app.use(bodyParser.urlencoded({extended:true}));//using body-parser
 app.use('/admin',adminRoutes);//using admin routes and change all url to localhost:3000/admin/...
 app.use(shopRoutes);//using shop routes
 app.use ((req, res, next) => {
-    res.status(404).send('<h1>Page not found</h1>');//sending a response
+    res.status(404).sendFile(path.join(__dirname,'views','404-Error.html'));//sending a response
 });
 // const server = http.createServer(app);//creating a server
 // //listening to port
