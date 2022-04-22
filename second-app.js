@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');//importing body-parser module
 const adminRoutes = require('./routes/admin');//importing admin routes
 const shopRoutes = require('./routes/shop');//importing shop routes
 app.use(bodyParser.urlencoded({extended:true}));//using body-parser
-app.use(adminRoutes);//using admin routes
+app.use('/admin',adminRoutes);//using admin routes and change all url to localhost:3000/admin/...
 app.use(shopRoutes);//using shop routes
 app.use ((req, res, next) => {
     res.status(404).send('<h1>Page not found</h1>');//sending a response
