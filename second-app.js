@@ -1,4 +1,3 @@
-const http = require('http');//importing http module
 const express = require('express');//importing express module
 const app = express();//creating an express application
 const bodyParser = require('body-parser');//importing body-parser module
