@@ -5,6 +5,7 @@ const adminRoutes = require('./routes/admin');//importing admin routes
 const shopRoutes = require('./routes/shop');//importing shop routes
 const path = require('path');//importing path module
 app.use(bodyParser.urlencoded({extended:true}));//using body-parser
+app.use(express.static(path.join(__dirname,'public')));//using express static middleware . making the path of any file .css or .js to public folder of the project
 app.use('/admin',adminRoutes);//using admin routes and change all url to localhost:3000/admin/...
 app.use(shopRoutes);//using shop routes
 app.use ((req, res, next) => {
