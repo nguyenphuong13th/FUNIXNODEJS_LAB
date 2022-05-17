@@ -1,6 +1,7 @@
 const express=require('express');
 const path=require('path');
 const router=express.Router();
+const products = [];
 const rootDir=require('../ultil/path');
 //admin/add-product => GET
 router.get('/add-product',(req, res, next) => {
@@ -8,7 +9,8 @@ router.get('/add-product',(req, res, next) => {
 })
 //admin/add-product => POST
 router.post('/add-product',(req, res, next) => { // only for post requests url can be the same with get
-    console.log(req.body);//logging the request body
+    products.push({title:req.body.title});//pushing the title of the product to the products array
     res.redirect("/");//back to the root
 })
-module.exports=router;
+exports.routes=router;
+exports.products=products;
