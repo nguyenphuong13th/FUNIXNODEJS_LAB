@@ -1,5 +1,7 @@
 const express = require('express');//importing express module
 const app = express();//creating an express application
+app.set('view engine', 'pug');//setting the view engine to pug, telling express to use pug as the view engine
+app.set('views', 'views');//setting the views folder, telling express to look for views in views folder
 const bodyParser = require('body-parser');//importing body-parser module
 const adminData = require('./routes/admin');//importing admin routes
 const shopRoutes = require('./routes/shop');//importing shop routes
