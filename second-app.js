@@ -12,7 +12,8 @@ app.use(express.static(path.join(__dirname,'public')));//using express static mi
 app.use('/admin',adminData.routes);//using admin routes and change all url to localhost:3000/admin/...
 app.use(shopRoutes);//using shop routes
 app.use ((req, res, next) => {
-    res.status(404).sendFile(path.join(__dirname,'views','404-Error.html'));//sending a response
+    // res.status(404).sendFile(path.join(__dirname,'views','404-Error.html'));//sending a response
+    res.status(404).render('404-Error');//rendering the 404.pug file in views folder automatically
 });
 // const server = http.createServer(app);//creating a server
 // //listening to port
