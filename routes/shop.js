@@ -7,6 +7,10 @@ router.get('/',(req, res, next) => {// use get method if use use post method the
     //dirname = routes where contains this shop file so we must go up 1 level by ../ then go to views folder and then go to shop.html file . path.join will join all segments together to have the file path
     // console.log('shop.js',adminData.products);
     // res.sendFile(path.join(rootDir,'views','shop.html'));//sending a response
-    res.render('shop');//rendering the shop page we dont need to defined path because it is already defined in views folder, we dont need to write shop.pug because it is already defined in second-app.js we will use pug template engine
+
+    const products = adminData.products;//getting the products array from admin.js
+
+
+    res.render('shop',{prods:products,docTitle:'Shop'});//rendering the shop page we dont need to defined path because it is already defined in views folder, we dont need to write shop.pug because it is already defined in second-app.js we will use pug template engine
 })
 module.exports = router;//exporting the router
