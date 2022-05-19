@@ -11,6 +11,6 @@ router.get('/',(req, res, next) => {// use get method if use use post method the
     const products = adminData.products;//getting the products array from admin.js
 
 
-    res.render('shop',{prods:products,docTitle:'Shop'});//rendering the shop page we dont need to defined path because it is already defined in views folder, we dont need to write shop.pug because it is already defined in second-app.js we will use pug template engine
+    res.render('shop',{prods:products,pageTitle:'Shop',path:'/'});//rendering the shop page we dont need to defined path because it is already defined in views folder, we dont need to write shop.pug because it is already defined in second-app.js we will use pug template engine
 })
 module.exports = router;//exporting the router

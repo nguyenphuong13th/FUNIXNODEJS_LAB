@@ -13,7 +13,7 @@ app.use('/admin',adminData.routes);//using admin routes and change all url to lo
 app.use(shopRoutes);//using shop routes
 app.use ((req, res, next) => {
     // res.status(404).sendFile(path.join(__dirname,'views','404-Error.html'));//sending a response
-    res.status(404).render('404-Error');//rendering the 404.pug file in views folder automatically
+    res.status(404).render('404-Error',{pageTitle:'404'});//rendering the 404.pug file in views folder automatically
 });
 // const server = http.createServer(app);//creating a server
 // //listening to port
