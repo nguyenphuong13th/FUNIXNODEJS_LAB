@@ -6,7 +6,7 @@ const rootDir=require('../ultil/path');
 //admin/add-product => GET
 router.get('/add-product',(req, res, next) => {
     // res.sendFile(path.join(rootDir,'views','add-product.html'));//sending a response, action is the url where the form will be submitted, method is the method used to submit the form (POST or GET)
-    res.render('add-product',{pageTitle:'Add-product',path : '/admin/add-product'});
+    res.render('add-product',{pageTitle:'Add-product',path : '/admin/add-product',activeAddProduct:true,formCss:true,productCss:true});//rendering the add-product page we dont need to defined path because it is already defined in views folder, we dont need to write add-product.pug because it is already defined in second-app.js we will use pug template engine, activeAddProduct is a variable that we will use to check if there are products in products array or not
 })
 //admin/add-product => POST
 router.post('/add-product',(req, res, next) => { // only for post requests url can be the same with get
