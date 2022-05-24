@@ -1,16 +1,12 @@
 
-const expressHbs = require('express-handlebars');
+
 const express = require('express');//importing express module
 const app = express();//creating an express application
 
 
 
-app.engine('hbs', expressHbs.engine({
-    layoutsDir:'views/layout/',
-    defaultLayout:'main-layout',
-    extname:'hbs'
-}));//setting up the engine for handlebars
-app.set('view engine', 'hbs');//setting the view engine to pug, telling express to use pug as the view engine
+
+app.set('view engine', 'ejs');//setting the view engine to pug, telling express to use pug as the view engine
 app.set('views', 'views');//setting the views folder, telling express to look for views in views folder
 
 
