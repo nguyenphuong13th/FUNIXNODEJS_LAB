@@ -1,4 +1,4 @@
-const products = [];
+const Product = require('../models/product');
 exports.getAddProduct = (req, res, next) => {
     res.render('add-product',
     {pageTitle:'Add-product',
@@ -7,13 +7,14 @@ exports.getAddProduct = (req, res, next) => {
     formCss:true,productCss:true
     });
 }
-exports.postAddProduct = (req, res, next) => { // only for post requests url can be the same with get
-    products.push({title:req.body.title});//pushing the title of the product to the products array
+exports.postAddProduct = (req, res, next) => {
+    const product = new Product(req.body.title) // only for post requests url can be the same with get
+    product.save();
     res.redirect("/");//back to the root
 }
 
 exports.getProduct = (req, res, next) => {
-
+    const products = Product.fetchAll();
     res.render('shop',{
         prods:products,
         pageTitle:'Shop',
