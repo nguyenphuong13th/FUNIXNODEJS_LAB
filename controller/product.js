@@ -23,3 +23,4 @@ exports.getProduct = (req, res, next) => {
         productCSS:true,
     });//rendering the shop page we dont need to defined path because it is already defined in views folder, we dont need to write shop.pug because it is already defined in second-app.js we will use pug template engine, hasproducts is a variable that we will use to check if there are products in products array or not
 }
+
