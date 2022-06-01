@@ -14,14 +14,16 @@ exports.postAddProduct = (req, res, next) => {
 }
 
 exports.getProduct = (req, res, next) => {
-    const products = Product.fetchAll();
-    res.render('shop',{
-        prods:products,
+    Product.fetchAll(products =>{
+        res.render('shop',
+        {prods:products,
         pageTitle:'Shop',
-        path:'/',
-        hasprods:products.length >0,
+        path : '/',
+        hasProducts:products.length > 0,
         activeShop:true,
-        productCSS:true,
-    });//rendering the shop page we dont need to defined path because it is already defined in views folder, we dont need to write shop.pug because it is already defined in second-app.js we will use pug template engine, hasproducts is a variable that we will use to check if there are products in products array or not
+        productCss:true
+        });
+    });
+
 }
 

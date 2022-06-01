@@ -18,7 +18,16 @@ module.exports = class Product {
             fs.writeFile(p, JSON.stringify(products), (err) => {console.log(err)})// writing the products.json file
         });
     }
-    static fetchAll() {
-        return products;
+    static fetchAll(cb) {
+        const p = path.join(path.dirname(require.main.filename),
+        'data',
+        'products.json');// getting the path of the file which store the products.json
+        fs.readFile(p, (err, fileContent) => {
+            if (err) {
+                cb([]);
+            }
+            cb(JSON.parse(fileContent));
+        });
+
     }
 }
